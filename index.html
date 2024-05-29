@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Mark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <link rel="icon" href="../../img/5801789.png" />
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/init.css">
+</head>
+
+<body onclick="close()">
+    <div class="container mt-5 d-flex justify-content-center align-items-center flex-column gap-5">
+        <h1>Bookmarker
+            <div class="bg"></div>
+        </h1>
+        <div class="col-12 d-flex justify-content-center align-items-center flex-column gap-5">
+            <h2>
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div class="site-name d-flex justify-content-center w-100 flex-column">
+                <label for="siteName">
+                    <i class="fa-solid fa-book-bookmark pe-2"></i>
+                    Site Name
+                </label>
+                <input oninput="validationName()" class="form-control" type="text" name="siteName" id="siteNameInput"
+                    placeholder="Bookmark Name">
+            </div>
+            <div class="site-url d-flex justify-content-center w-100 flex-column">
+                <label for="siteUrl">
+                    <i class="fa-solid fa-link pe-2"></i>
+                    Site Url
+                </label>
+                <input oninput="validationUrl()" class="form-control" type="text" name="siteUrl" id="siteUrl"
+                    placeholder="Website URL">
+            </div>
+            <button class="submit px-5 py-2 text-white rounded" onclick="addUrl()">submit</button>
+        </div>
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <td>Index</td>
+                    <td>Website Name</td>
+                    <td>Visit</td>
+                    <td> Delete</td>
+                </tr>
+            </thead>
+            <tbody id="siteCard">
+                <!-- <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button>Visit</button>
+                    </td>
+                    <td><button>Delete</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+    <div id="modelBox"
+        class="validation_box d-none d-flex justify-content-center align-items-center flex-column w-100 h-100 position-absolute start-0 top-0">
+        <div class="box p-3">
+            <div class="mb-3 d-flex justify-content-between align-items-center flex-row-reverse">
+                <div class="right">
+                    <button onclick="close()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="left d-flex">
+                    <span class="rounded-circle me-3 bg-danger"></span>
+                    <span class="rounded-circle me-3 bg-success"></span>
+                    <span class="rounded-circle me-3 bg-primary"></span>
+                </div>
+            </div>
+            <div class="caption">
+                <p>Site Name or Url is not valid, Please follow the rules below :</p>
+                <ul>
+                    <li>Site name must contain at least 3 characters</li>
+                    <li>Site URL must be a valid one</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
